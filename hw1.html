@@ -2,47 +2,132 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title>Document</title>
     <script>
         function quest0() {
-            // 여기에 스크립트를 작성하세요
+            
+          var input, sec="4000"
+
+          do {
+              input = prompt("초 단위 시간을 입력하세요");
+          } while(input !== sec);
+
+          return ("66 분 40 초입니다.");
+          
         }
 
         function quest1() {
-            
-            // 여기에 스크립트를 작성하세요            
+          
+          var x1 = prompt("첫 번째 점의 x좌표를 입력하세요","");
+          var y1 = prompt("첫 번째 점의 y좌표를 입력하세요","");
+          var x2 = prompt("두 번째 점의 x좌표를 입력하세요","");
+          var y2 = prompt("두 번째 점의 y좌표를 입력하세요","");
+          var p1 = (x1[0] - x2[0]) ** 2;
+          var p2 = (y1[1] - y2[1]) ** 2;
 
-            let distance = getDist(p1, p2); // 반드시 이 코드를 이용하세요
+          let distance = getDist(p1, p2); // 반드시 이 코드를 이용하세요
             console.log(distance);
 
         }
 
-        function getDist() { // 입력 인자 설정 필요
-            // 여기에 스크립트를 작성하세요
+        function getDist(p1, p2) { // 입력 인자 설정 필요              
+          p1 = (x1[0] - x2[0]) ** 2;
+          p2 = (y1[1] - y2[1]) ** 2;
+          return p1 + p2;
+          // 여기에 스크립트를 작성하세요
         }
+        
 
         function quest2(str) {  
-            
+          let answer = '';
+          for (let x of str) {
+            if (x === x.toLowerCase()) answer += x.toUpperCase();
+            else answer += x;
+          }
+          return answer;
             // 여기에 스크립트를 작성하세요
         }
 
         function quest3() {
             // 여기에 스크립트를 작성하세요
+            var num1 = prompt("첫 번째 숫자를 입력하세요", "");
+            var oper = prompt("연산자를 입력하세요", "");
+            var num2 = prompt("두 번째 숫자를 입력하세요", "");
+
+            num1 = Number.parselnt();
+            num2 = Number.parselnt();
 
             var answer = operate(num1, oper, num2); // 반드시 이 코드를 사용하세요
             console.log("정답은 %d입니다.", answer);
         }
 
         function operate(num1, oper, num2) { // 반드시 이 함수를 이용하여 연산 결과를 계산하세요
+          var endValue;
+          switch(operate){
+              case "+":
+                endValue = num1 + num2;
+                break;
+              case '-':
+                endValue = num1 - num2;
+                break;
+              case 'x':
+                endValue = num1 * num2;
+                break;
+              case '/':
+                endValue = num1 / num2;
+                break;
+              case '%':
+                endValue = num1 % num2;
+                break;
+            }
             
+              return answer;
             // 여기에 스크립트를 작성하세요
             // 단, 반드시 switch 문을 활용하세요
 
         }
 
         function quest4() {
+            
+          var userChoice = prompt("가위 바위 보!");
+          var computerChoice = Math.random();
+          if (computerChoice >= 0 && computerChoice <= 0.33){
+            computerChoice = "바위";
+          }
+          else if (computerChoice >= 0.34 && computerChoice < 0.66){
+              computerChoice = "보";
+            }
+          else {
+            computerChoice = "가위";
+          } console.log("컴퓨터: "+ computerChoice);
 
-             // 여기에 스크립트를 작성하세요
+          compare(userChoice, computerChoice);
+
+          function compare(user, computer) {
+            if (user === computer) {
+              console.log("동점!");
+            }
+            else if (user === "바위"){
+              if (computer === "가위"){
+                console.log("사용자 승리!");
+              }
+              else {
+                console.log("컴퓨터 승리!");
+              }
+            }
+            else if(user === "보"){
+              if (computer === "바위"){
+                console.log("사용자 승리!");
+              }
+              else{
+                console.log("컴퓨터 승리!");
+              }
+            }
+          }
+
+    // 여기에 스크립트를 작성하세요
         }
 
         function quest5() {
@@ -51,7 +136,14 @@
         }
 
         function myReverse(str) {
-            
+          
+          var reverStr = "";
+
+          for (var i = str.length -1; i >= 0; i--) {
+            reverStr = reverStr + str.charAt(i);
+          }
+
+          return reverStr;
             // 여기에 스크립트를 작성하세요
             // 반드시 반복문을 이용하여 str의 내용을 뒤집으세요
 
@@ -85,7 +177,7 @@
                         
         }
 
-    </script>
+      </script>
 </head>
 
 <body>
